@@ -1,0 +1,106 @@
+body {
+  background: #eee;
+  color: #333;
+  margin: 0 auto;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  #main {
+    margin: 0 auto;
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #main {
+    margin: 0 auto;
+    max-width: 720px;
+  }
+}
+
+#main {
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+  /* padding: 20px; */
+  min-height: 600px;
+}
+
+p {
+  padding: 30px;
+}
+
+header {
+  /* display: flex; */
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background: #999;
+  color: white;
+}
+.branding {
+  width: 100%;
+  display: flex;
+}
+
+.branding h1 {
+  width: 100%;
+  text-align: right;
+  padding: 0 20px;
+  margin: 16px 0 0 0;
+}
+
+nav {
+  width: 100%;
+  text-align: center;
+  background: #333;
+}
+
+.nav-link {
+  padding: 20px;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: gray;
+}
+
+#contact {
+  text-align: center;
+  height: 100px;
+  padding: 20px;
+  background: #999;
+}
+
+#contact div {
+  display: inline;
+  padding: 20px;
+}
+input:invalid {
+  border: 1px solid orangered;
+}
+
+input:valid {
+}
+
+input,
+textarea,
+select {
+  border: 1px solid gray;
+  border-radius: 3px;
+  height: 20px;
+  margin: 4px;
+  width: 200px;
+}
+
+label,
+textarea {
+  width: 160px;
+}

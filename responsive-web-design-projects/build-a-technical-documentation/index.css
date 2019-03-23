@@ -1,0 +1,32 @@
+body {
+  background: white;
+  color: #333;
+}
+
+@media (min-width: 1025px) {
+  main {
+    position: fixed;
+    min-width: 590px;
+    top: 0px;
+    left: 300px;
+    height: 100%;
+  }
+  nav {
+    position: fixed;
+    min-width: 290px;
+    top: 0px;
+    left: 0px;
+    width: 300px;
+    height: 100%;
+  }
+  nav a {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  #main {
+    margin: 0 auto;
+    max-width: 720px;
+  }
+}

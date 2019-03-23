@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+  </head>
+
+  <body>
+    <div id="main">
+      <h1 id="title">Survey Form</h1>
+      <p id="description">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint ducimus
+        adipisci, modi ipsam voluptates nulla, sit numquam natus, saepe animi
+        officiis necessitatibus magni inventore provident. Aspernatur modi
+        architecto rem laboriosam!
+      </p>
+      <form method="GET" action="" id="survey-form">
+        <div class="block">
+          <div class="left">
+            <label id="name-label" for="name">Name:</label>
+          </div>
+          <div class="right">
+            <input
+              type="text"
+              id="name"
+              placeholder="your name"
+              pattern="[a-z]*"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="left">
+            <label id="email-label" for="email">Email address:</label>
+          </div>
+          <div class="right">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your email address"
+              required
+            />
+          </div>
+        </div>
+        <div class="block">
+          <div class="left">
+            <label id="number-label" for="number">Age:</label>
+          </div>
+          <div class="right">
+            <input
+              type="number"
+              id="number"
+              min="18"
+              max="100"
+              placeholder="your age (min 18)"
+            />
+          </div>
+        </div>
+        <div class="block">
+          <div class="left">
+            <label for="interests">Interests:</label>
+          </div>
+          <div class="right">
+            <input type="text" id="interests" placeholder="your interests" />
+          </div>
+        </div>
+        <div class="block">
+          <div class="left">
+            <label for="main-language">Your main Language:</label>
+          </div>
+          <div class="right">
+            <select id="dropdown" name="main-language" multiple>
+              <option value="english">English</option>
+              <option value="spanish">Spanish</option>
+              <option value="german">German</option>
+            </select>
+          </div>
+        </div>
+        <div class="block">
+          <div class="left"><label for="gender">Gender:</label><br /></div>
+          <div class="right">
+            <input type="radio" name="gender" value="male" /> Male<br />
+            <input type="radio" name="gender" value="female" /> Female<br />
+            <input type="radio" name="gender" value="other" /> Other
+          </div>
+        </div>
+        <div class="block">
+          <div class="left">
+            <label for="msg">Leave a short message</label>
+          </div>
+          <div class="right">
+            <textarea
+              id="msg"
+              name="msg"
+              maxlength="140"
+              rows="5"
+              placeholder="your message"
+            ></textarea>
+          </div>
+        </div>
+        <div class="block">
+          <div class="left">
+            <label for="contact"
+              >Would you like to be contacted for future surveys?</label
+            >
+          </div>
+          <div class="right">
+            <input type="checkbox" name="contact" value="yes" /> Yes
+            <input type="checkbox" name="contact" value="no" /> No
+          </div>
+        </div>
+        <div>
+          <button id="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

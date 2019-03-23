@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+      integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <header id="header">
+      <div class="branding">
+        <img
+          id="header-img"
+          src="https://picsum.photos/120/80?image=0"
+          width="120px"
+          height="80px"
+        />
+        <h1 id="title">Product Landing Page</h1>
+      </div>
+      <nav id="nav-bar">
+        <a href="#video" class="nav-link">
+          VIDEO
+        </a>
+        <a href="#email" class="nav-link">
+          EMAIL
+        </a>
+        <a href="#contact" class="nav-link">
+          CONTACT
+        </a>
+      </nav>
+    </header>
+    <div id="main">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Id voluptatum
+        corporis nostrum praesentium quasi veritatis necessitatibus aspernatur
+        aliquid obcaecati temporibus consectetur nam rerum, minima odit esse eos
+        eveniet eligendi tempora.
+      </p>
+      <div>
+        <iframe
+          id="video"
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/mXRfApkMYZU"
+          frameborder="0"
+          allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos nostrum
+          quam totam accusantium velit provident enim necessitatibus molestiae
+          cumque vero incidunt fuga ipsam, cum, optio esse nisi. Molestias, ab
+          illum!
+        </p>
+        <form
+          method="GET"
+          action="https://www.freecodecamp.com/email-submit"
+          id="form"
+        >
+          <div class="block">
+            <div class="left">
+              <label id="email-label" for="email">Email address:</label>
+            </div>
+            <div class="right">
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="your email address"
+                required
+              />
+            </div>
+          </div>
+          <input type="submit" id="submit" value="Submit" />
+        </form>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi ad nemo
+          possimus aspernatur culpa maiores ipsum quod dolorem eius
+          perspiciatis, rerum quisquam voluptatum magni doloremque libero
+          eligendi. Eum, laboriosam totam.
+        </p>
+      </div>
+    </div>
+    <div id="contact">
+      <h4>Contact us:</h4>
+      <div id="email">
+        <span style="font-size: 24px; color: white;">
+          <i class="fas fa-envelope"></i> </span
+        >email
+      </div>
+      <div id="twitter">
+        <span style="font-size: 24px; color: white;">
+          <i class="fab fa-twitter"></i> </span
+        >twitter
+      </div>
+      <div id="facebook">
+        <span style="font-size: 24px; color: white;">
+          <i class="fab fa-facebook"></i> </span
+        >facebook
+      </div>
+    </div>
+  </body>
+</html>

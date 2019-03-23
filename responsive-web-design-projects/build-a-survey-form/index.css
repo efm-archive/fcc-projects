@@ -1,0 +1,92 @@
+body {
+  background: white;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+}
+
+p {
+  padding: 20px;
+}
+#main {
+  margin: 0 auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+tr {
+  border: 1px solid #999;
+}
+
+td {
+  text-align: left;
+}
+
+td.first {
+  min-width: 100px;
+}
+
+td.second {
+  min-width: 200px;
+}
+
+input:invalid {
+  border: 1px solid orangered;
+}
+
+input:valid {
+}
+label,
+textarea {
+  width: 160px;
+}
+
+.block {
+  margin: 8px;
+}
+input,
+textarea,
+select {
+  border: 1px solid gray;
+  border-radius: 3px;
+  min-height: 20px;
+}
+.block {
+  width: 600px;
+  display: flex;
+  margin: 10px auto;
+}
+
+.left {
+  min-width: 200px;
+  /* width: 30%; */
+  text-align: left;
+  display: flex;
+}
+.right {
+  /* width: 70%; */
+  min-width: 400px;
+  text-align: left;
+}
+#number {
+  width: 60px;
+}
+
+#name,
+#email,
+#interests,
+#msg {
+  width: 300px;
+}
+form .right {
+  font-size: 12px;
+}
+
+form {
+  margin: 0 auto;
+  min-width: 600px;
+  display: flex;
+  flex-direction: column;
+  background: #eee;
+  padding: 10px 0 20px 0;
+}
