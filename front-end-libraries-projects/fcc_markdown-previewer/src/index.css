@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+#title {
+  text-align: center;
+}
+
+#main {
+  margin: 0 auto;
+  width: 960px;
+  /* text-align: center; */
+}
+#editorDiv {
+  padding: 4px;
+  margin: 0 auto;
+  width: 600px;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+  /* box-shadow: 3px 3px 5px grey; */
+}
+
+#editorDiv textarea {
+  border: none;
+  width: 596px;
+  resize: none;
+  outline: none;
+}
+
+#preview {
+  border: 1px solid #eee;
+  background: #eee;
+  min-height: 500px;
+  box-shadow: 3px 3px 5px grey;
+}

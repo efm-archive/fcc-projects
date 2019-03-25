@@ -1,0 +1,37 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+#title {
+  text-align: center;
+}
+#display {
+  margin: 0 auto;
+  width: 960px;
+  /* text-align: center; */
+}
+#drums {
+  height: 400px;
+}
+
+.drum-pad {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin: 2px;
+  padding: 40px;
+  border: 1px solid gray;
+  text-align: center;
+}
+.letter {
+  font-size: 32px;
+  /* display: inline; */
+  padding: 30px 0;
+
+  border: 1px solid black;
+  text-align: center;
+}
+#playing {
+  font-size: 20px;
+  text-align: center;
+}

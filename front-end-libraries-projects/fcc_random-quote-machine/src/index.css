@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+  height: 100vh;
+}
+.App h1 {
+  margin: 0 0 10px 0;
+}
+#main {
+  margin-top: 100px;
+}
+#quote-box {
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid lightgrey;
+  background: lightgrey;
+  width: 300px;
+  box-shadow: 5px 5px 10px grey;
+}
+
+#text {
+  font-size: 16px;
+  width: 300px;
+  padding: 10px 0;
+  margin: auto;
+}
+
+#author {
+  font-size: 18px;
+  font-style: italic;
+  padding: 10px 0 20px 0;
+}
+
+.quoteButton {
+  margin: 20px 0 0 0;
+  border: 1px solid grey;
+  padding: 2px;
+  margin: 2px;
+  cursor: pointer;
+}
+
+#new-quote,
+#tweet-quote {
+  text-decoration: none;
+  color: black;
+}
