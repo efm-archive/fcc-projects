@@ -1,0 +1,74 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+#root {
+  margin: 100px auto;
+  width: 400px;
+}
+
+h1 {
+}
+
+#clock {
+  text-align: center;
+  padding: 10px;
+}
+#display {
+  position: relative;
+  font-size: 40px;
+  width: 300px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+#display span {
+  position: relative;
+  top: 70px;
+}
+
+.session {
+  height: 100%;
+  background: #c4efc4;
+}
+
+.idle {
+  height: 100%;
+  background: #eee;
+}
+
+.break {
+  height: 100%;
+  background: orange;
+}
+
+#select {
+  display: flex;
+}
+.selector {
+  width: 120px;
+  margin: 0 auto;
+}
+.selector input {
+  width: 30px;
+}
+.selector span {
+  text-align: center;
+  display: block;
+}
+
+/* TEST CSS */
+
+#main {
+  margin: 0 auto;
+}
+
+.button {
+  width: 100px;
+  height: 20px;
+  border: 1px solid gray;
+  text-align: center;
+  padding: 4px 0 0 0;
+  cursor: pointer;
+  margin: 4px;
+}
