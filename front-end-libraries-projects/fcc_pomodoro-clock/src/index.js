@@ -5,15 +5,31 @@ class Select extends React.Component {
   render() {
     return (
       <div className="selector">
-        <div id={this.props.id}>{this.props.label}</div>
-        <button id={this.props.decLabel} onClick={this.props.decrement}>
-          -
-        </button>
+        <div className="label" id={this.props.id}>
+          {this.props.label}
+        </div>
+        <div
+          className="button"
+          id={this.props.incLabel}
+          onClick={this.props.increment}
+        >
+          <span>
+            <i className="fas fa-angle-up" />
+          </span>
+        </div>
 
-        <div id={this.props.lengthLabel}>{this.props.value}</div>
-        <button id={this.props.incLabel} onClick={this.props.increment}>
-          +
-        </button>
+        <div className="value" id={this.props.lengthLabel}>
+          {this.props.value}
+        </div>
+        <div
+          className="button"
+          id={this.props.decLabel}
+          onClick={this.props.decrement}
+        >
+          <span>
+            <i className="fas fa-angle-down" />
+          </span>
+        </div>
       </div>
     );
   }
@@ -47,19 +63,28 @@ class App extends React.Component {
     super(props);
     this.state = {
       playing: false,
-      //status session, break
       status: 'session',
       sessionMin: 25,
-      sessionSec: 60,
+      sessionSec: 1500,
       breakMin: 5,
-      breakSec: 3,
-      timer: 60
+      breakSec: 300,
+      timer: 1500
     };
   }
 
+  resetTimerDefault = () => {
+    this.setState({
+      sessionMin: 25,
+      breakMin: 5,
+      sessionSec: 25 * 60,
+      breakSec: 5 * 60,
+      status: 'session',
+      timer: 25 * 60
+    });
+  };
+
   handleTimerValues = (min, sec, mode, status) => {
     let time = this.state[min];
-
     if (mode === 'inc') {
       time += 1;
     }
@@ -81,19 +106,7 @@ class App extends React.Component {
     }
   };
 
-  resetTimerDefault = () => {
-    this.setState({
-      sessionMin: 25,
-      breakMin: 5,
-      sessionSec: 25 * 60,
-      breakSec: 5 * 60,
-      status: 'session',
-      timer: 25 * 60
-    });
-  };
-
   handleResetButton = () => {
-    //console.log('handleResetButton clicked');
     this.setState({ playing: false });
     this.handleAudio('reset');
     this.resetTimerDefault();
@@ -104,8 +117,22 @@ class App extends React.Component {
     this.handlePlay();
   };
 
-  switchTimer = status => {
-    console.log('switchTimer called - status:', status);
+  handlePlay = () => {
+    this.startCountdown(this.state.status);
+  };
+
+  handleAudio = what => {
+    const audio = document.querySelector(`audio`);
+    audio.currentTime = 0;
+    if (what === 'reset') {
+      audio.pause();
+    }
+    if (what === 'play') {
+      audio.play();
+    }
+  };
+
+  switchCountdown = status => {
     if (status === 'session') {
       this.setState({
         status: 'break',
@@ -122,12 +149,7 @@ class App extends React.Component {
     }
   };
 
-  handlePlay = () => {
-    this.startCountdown(this.state.status);
-  };
-
   startCountdown = status => {
-    console.log('startCountdown called - status:', status);
     const countdown = setInterval(() => {
       //if playing is false, clear the countdown
       if (!this.state.playing) {
@@ -138,26 +160,13 @@ class App extends React.Component {
         this.setState({ timer: this.state.timer - 1 });
       }
       //if timer reaches 0, clear the countdown, then switch the status/countdown to session/break
-      if (this.state.timer <= 0) {
+      if (this.state.timer < 0) {
         clearInterval(countdown);
-        this.switchTimer(status);
         this.handleAudio('play');
+        this.switchCountdown(status);
         return;
       }
     }, 1000);
-  };
-
-  handleAudio = key => {
-    const audio = document.querySelector(`audio`);
-    if (key == 'reset') {
-      console.log('resetting audio');
-      audio.currentTime = 0;
-      audio.pause();
-    }
-    if (key == 'play') {
-      audio.currentTime = 0;
-      audio.play();
-    }
   };
 
   render() {
@@ -208,44 +217,31 @@ class App extends React.Component {
             <Display
               time={this.state.timer}
               className={this.state.status}
-              label={this.state.status}
+              label={this.state.status === 'session' ? 'Session' : 'Break'}
             />
           </div>
         </div>
-
-        <div className="button" id="start_stop" onClick={this.handlePlayToggle}>
-          {!this.state.playing ? `START` : `STOP`}
-        </div>
-        <div
-          className="button"
-          id="test-reset"
-          onClick={this.handleResetButton}
-        >
-          RESET
-        </div>
-        <div
-          className="button"
-          id="test-session"
-          onClick={() => {
-            this.setState({
-              status: 'session',
-              timer: this.state.sessionSec
-            });
-          }}
-        >
-          SESSION
-        </div>
-        <div
-          className="button"
-          id="test-break"
-          onClick={() => {
-            this.setState({
-              status: 'break',
-              timer: this.state.breakSec
-            });
-          }}
-        >
-          BREAK
+        <div className="controls">
+          <div
+            className="button"
+            id="start_stop"
+            onClick={this.handlePlayToggle}
+          >
+            {!this.state.playing ? (
+              <span>
+                <i className="fas fa-caret-right" />
+              </span>
+            ) : (
+              <span>
+                <i className="fas fa-stop" />
+              </span>
+            )}
+          </div>
+          <div className="button" id="reset" onClick={this.handleResetButton}>
+            <span>
+              <i className="fas fa-undo-alt" />
+            </span>
+          </div>
         </div>
         <audio
           id="beep"

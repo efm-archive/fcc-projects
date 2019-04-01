@@ -4,7 +4,7 @@ body {
 }
 #root {
   margin: 100px auto;
-  width: 400px;
+  width: 300px;
 }
 
 h1 {
@@ -12,7 +12,7 @@ h1 {
 
 #clock {
   text-align: center;
-  padding: 10px;
+  margin: 10px 0;
 }
 #display {
   position: relative;
@@ -29,7 +29,7 @@ h1 {
 
 .session {
   height: 100%;
-  background: #c4efc4;
+  background: honeydew;
 }
 
 .idle {
@@ -39,7 +39,7 @@ h1 {
 
 .break {
   height: 100%;
-  background: orange;
+  background: gold;
 }
 
 #select {
@@ -48,6 +48,7 @@ h1 {
 .selector {
   width: 120px;
   margin: 0 auto;
+  text-align: center;
 }
 .selector input {
   width: 30px;
@@ -64,11 +65,63 @@ h1 {
 }
 
 .button {
-  width: 100px;
-  height: 20px;
-  border: 1px solid gray;
   text-align: center;
-  padding: 4px 0 0 0;
+
   cursor: pointer;
-  margin: 4px;
+}
+
+.label {
+  font-size: 16px;
+}
+
+.value {
+  font-size: 24px;
+  text-align: center;
+}
+
+.selector .button {
+  width: 30px;
+  margin: 0 auto;
+  /* background: lightgray; */
+}
+
+.controls {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.controls .button {
+  border: 1px solid #eee;
+  margin: 0 auto;
+  height: 24px;
+  padding: 4px 0 0 0;
+  width: 40%;
+}
+.controls .button span {
+  position: relative;
+}
+.fa-caret-right {
+  position: relative;
+  top: -2px;
+  left: 2px;
+  font-size: 24px;
+}
+.fa-stop {
+  position: relative;
+  top: 2px;
+}
+.fa-undo-alt {
+  position: relative;
+  top: 2px;
+}
+.fa-angle-up,
+.fa-angle-down {
+  font-size: 24px;
+}
+#time-left {
+  padding: 40px 0 0 0;
+}
+
+#timer-label {
+  padding: 20px 0 0 0;
 }
